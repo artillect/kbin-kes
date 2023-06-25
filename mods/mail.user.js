@@ -9,58 +9,59 @@
 // @license       MIT
 // ==/UserScript==
 
-const itemsSelector = '.user-inline';
+const itemsSelector = ".user-inline";
 
 function insertElementAfter(target, element) {
-  if (target.nextSibling) {
-    target.parentNode.insertBefore(element, target.nextSibling);
-  } else {
-    target.parentNode.appendChild(element);
-  }
+    if (target.nextSibling) {
+        target.parentNode.insertBefore(element, target.nextSibling);
+    } else {
+        target.parentNode.appendChild(element);
+    }
 }
 
 function getUsername(item) {
-  try {
-     if ( item.href.split('/u/')[1].charAt(0) == '@') {
-         return null
-     }
-    return item.href.split('/u/')[1];
-  } catch (error) {
-    return null;
-  }
+    try {
+        if ( item.href.split("/u/")[1].charAt(0) == "@") {
+            return null;
+        }
+        return item.href.split("/u/")[1];
+    } catch (error) {
+        return null;
+    }
 }
 
 function addItemLink(item) {
-  const username = getUsername(item);
-  if (!username) return;
-  const link = document.createElement('a');
-  link.setAttribute('href', `https://kbin.social/u/${username}/message`);
-  link.innerText = 'Mail';
-  link.className = 'item-link';
-  link.style.cssText += 'margin-left: 5px;text-decoration:underline !important';
-  insertElementAfter(item, link);
+    const username = getUsername(item);
+    if (!username) return;
+    const link = document.createElement("a");
+    link.setAttribute("href", `https://kbin.social/u/${username}/message`);
+    link.innerHTML = "<i class=\"fa-solid fa-envelope\"></i>";
+    link.title = "Message " + username;
+    link.className = "item-link";
+    link.style.cssText += "margin-left: 5px;text-decoration:underline !important";
+    insertElementAfter(item, link);
 }
 
 function checkItem(item) {
-  if (item && item.nextElementSibling && item.nextElementSibling.classList) {
-    return !!item
-      .nextElementSibling
-      .classList.contains('item-link');
-  }
-  return false;
+    if (item && item.nextElementSibling && item.nextElementSibling.classList) {
+        return !!item
+            .nextElementSibling
+            .classList.contains("item-link");
+    }
+    return false;
 }
 
 function checkItems(selector) {
-  const items = document.querySelectorAll(selector);
-  items.forEach((item) => {
-    if (!checkItem(item)) addItemLink(item);
-  });
+    const items = document.querySelectorAll(selector);
+    items.forEach((item) => {
+        if (!checkItem(item)) addItemLink(item);
+    });
 }
 
 function addMail(toggle){
     console.log(toggle);
     if (toggle == false) {
-	    $('.item-link').remove();
+        $(".item-link").remove();
     } else {
         checkItems(itemsSelector);
     }
