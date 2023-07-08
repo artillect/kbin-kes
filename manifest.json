@@ -305,13 +305,13 @@
     "fields": [
       {
         "type": "checkbox",
-        "initial": true,
+        "initial": "on",
         "key": "users",
         "label": "Show instance names next to users"
       },
       {
         "type": "checkbox",
-        "initial": true,
+        "initial": "on",
         "key": "magazines",
         "label": "Show instance names next to magazines"
       }

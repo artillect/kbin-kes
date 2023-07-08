@@ -65,8 +65,7 @@ const funcObj = {
     hideUpvotes: hideUpvotes,
     hideDownvotes: hideDownvotes,
     hideReputation: hideReputation,
-    userInstanceEntry: userInstanceEntry,
-    magInstanceEntry: magInstanceEntry,
+    initInstanceNames: initInstanceNames,
     updateTime: updateTime
 };
 
