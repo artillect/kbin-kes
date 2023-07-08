@@ -294,13 +294,28 @@
   {
     "name": "Federated Instance Names",
     "author": "artillect",
-    "version": "0.1",
+    "version": "0.2",
     "label": "Magazine instance names",
     "desc": "Show instance names next to magazines",
     "login": false,
-    "class": "magInstanceEntry",
-    "entrypoint": "magInstanceEntry",
-    "page": "general"
+    "class": "initInstanceNames",
+    "entrypoint": "initInstanceNames",
+    "page": "general",
+    "namespace": "instanceNames",
+    "fields": [
+      {
+        "type": "checkbox",
+        "initial": true,
+        "key": "users",
+        "label": "Show instance names next to users"
+      },
+      {
+        "type": "checkbox",
+        "initial": true,
+        "key": "magazines",
+        "label": "Show instance names next to magazines"
+      }
+    ]
   },
   {
     "name": "Hide Votes and Reputation",
@@ -320,39 +335,6 @@
     "label": "Hide Reduces",
     "desc": "Hide reduces (downvotes) on threads, posts, and comments",
     "login": false,
-    "class": "hideDownvotes",
-    "entrypoint": "hideDownvotes",
-    "page": "general"
-  },
-  {
-    "name": "Federated Instance Names",
-    "author": "artillect",
-    "version": "0.1",
-    "label": "Magazine instance names",
-    "login": false,
-    "desc": "Show instance names next to magazines",
-    "class": "magInstanceEntry",
-    "entrypoint": "magInstanceEntry",
-    "page": "general"
-  },
-  {
-    "name": "Hide Votes and Reputation",
-    "author": "artillect",
-    "version": "0.2",
-    "label": "Hide favorites",
-    "login": false,
-    "desc": "Hide favorites (upvotes) on threads, posts, and comments",
-    "class": "hideUpvotes",
-    "entrypoint": "hideUpvotes",
-    "page": "general"
-  },
-  {
-    "name": "Hide Votes and Reputation",
-    "author": "artillect",
-    "version": "0.2",
-    "label": "Hide reduces",
-    "login": false,
-    "desc": "Hide reduces (downvotes) on threads, posts, and comments",
     "class": "hideDownvotes",
     "entrypoint": "hideDownvotes",
     "page": "general"

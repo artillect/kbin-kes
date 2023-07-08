@@ -15,6 +15,17 @@ console.log(localInstance);
 const userInstanceObserver = new MutationObserver(showUserInstances);
 const magInstanceObserver = new MutationObserver(showMagInstances);
 
+function initInstanceNames(toggle) {
+    if (toggle) {
+        const settings = getModSettings('instanceNames');
+        userInstanceEntry(settings.users);
+        magInstanceEntry(settings.magazines);
+    } else {
+        userInstanceEntry(false);
+        magInstanceEntry(false);
+    }
+}
+
 function userInstanceEntry(toggle) {
     if (toggle) {
         showUserInstances();
