@@ -296,25 +296,25 @@
     "author": "artillect",
     "version": "0.2",
     "label": "Magazine instance names",
-    "desc": "Show instance names next to magazines",
+    "desc": "Show instance names for federated users and magazines",
     "login": false,
     "class": "initInstanceNames",
     "entrypoint": "initInstanceNames",
     "page": "general",
     "namespace": "instanceNames",
     "fields": [
-      {
-        "type": "checkbox",
-        "initial": "on",
-        "key": "users",
-        "label": "Show instance names next to users"
-      },
-      {
-        "type": "checkbox",
-        "initial": "on",
-        "key": "magazines",
-        "label": "Show instance names next to magazines"
-      }
+        {
+          "label": "Show instance names after:",
+          "type": "select",
+          "initial": "Both",
+          "key": "style",
+          "values": [
+            "Both",
+            "Users",
+            "Magazines",
+            "None"
+          ]
+        }
     ]
   },
   {

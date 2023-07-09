@@ -18,8 +18,27 @@ const magInstanceObserver = new MutationObserver(showMagInstances);
 function initInstanceNames(toggle) {
     if (toggle) {
         const settings = getModSettings('instanceNames');
-        userInstanceEntry(settings.users);
-        magInstanceEntry(settings.magazines);
+
+        switch (settings.showAfter) {
+            case 'Both':
+                userInstanceEntry(true);
+                magInstanceEntry(true);
+                break;
+            case 'Users':
+                userInstanceEntry(true);
+                magInstanceEntry(false);
+                break;
+            case 'Communities':
+                magInstanceEntry(true);
+                userInstanceEntry(false);
+                break;
+            case 'None':
+                userInstanceEntry(false);
+                magInstanceEntry(false);
+                break;
+            default:
+                console.log('Invalid setting for instance names');
+        }
     } else {
         userInstanceEntry(false);
         magInstanceEntry(false);
