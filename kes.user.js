@@ -48,6 +48,7 @@
 // @require       https://github.com/aclist/kbin-kes/raw/testing/mods/improved-collapsible-comments.user.js
 // @require       https://github.com/aclist/kbin-kes/raw/testing/mods/hide-logo.user.js
 // @require       https://github.com/aclist/kbin-kes/raw/testing/mods/hide-thumbs.user.js
+// @require       https://github.com/artillect/kbin-kes/raw/community-quieter/mods/granular-community-filter.js
 // @resource      kes_css https://github.com/aclist/kbin-kes/raw/testing/kes.css
 // @resource      kes_layout https://github.com/aclist/kbin-kes/raw/testing/ui.json
 // @downloadURL    https://github.com/aclist/kbin-scripts/raw/testing/kes.user.js
@@ -84,7 +85,8 @@ const funcObj = {
     hideThumbs: hideThumbs,
     navbarIcons: navbarIcons,
     hideSidebar: hideSidebar,
-    initKFA: initKFA
+    initKFA: initKFA,
+    initGranularFilter: initGranularFilter,
 };
 function fetchManifest() {
     safeGM("xmlhttpRequest",{
