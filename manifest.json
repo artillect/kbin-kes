@@ -473,5 +473,25 @@
       }
     ],
     "page": "navbar"
+  },
+  {
+    "name": "Granular Community Filter",
+    "author": "artillect",
+    "version": "0.1.0",
+    "label": "Granular Community Filter",
+    "desc": "Randomly hide posts from chosen communities based on a factor, to reduce the amount of content you see from them without blocking them entirely. Each filter should be formatted as follows, with each on a separate line: 'community factor', where the factor is a number between 0 and 1. For example, 'enhancement 0.25' would hide 75% of posts from KES's magazine.",
+    "login": false,
+    "recurs": true,
+    "entrypoint": "initGranularFilter",
+    "namespace": "granular-community-filter",
+    "fields": [
+      {
+        "type": "text",
+        "initial": "",
+        "key": "filter",
+        "label": "Community filters"
+      }
+    ],
+    "page": "threads"
   }
 ]

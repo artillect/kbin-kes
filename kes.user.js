@@ -38,6 +38,7 @@
 // @require       https://github.com/aclist/kbin-kes/raw/main/mods/improved-collapsible-comments.user.js
 // @require       https://github.com/aclist/kbin-kes/raw/main/mods/hide-logo.user.js
 // @require       https://github.com/aclist/kbin-kes/raw/main/mods/hide-thumbs.user.js
+// @require       https://github.com/artillect/kbin-kes/raw/granular-filter/mods/granular-community-filter.js
 // @resource      kes_css https://github.com/aclist/kbin-kes/raw/main/kes.css
 // @resource      kes_layout https://github.com/aclist/kbin-kes/raw/main/ui.json
 // @downloadURL    https://github.com/aclist/kbin-scripts/raw/main/kes.user.js
@@ -45,8 +46,8 @@
 // ==/UserScript==
 const version = GM_info.script.version;
 const tool = GM_info.script.name;
-const repositoryURL = "https://github.com/aclist/kbin-kes/";
-const branch = repositoryURL + "raw/main/"
+const repositoryURL = "https://github.com/artillect/kbin-kes/";
+const branch = repositoryURL + "raw/granular-filter/"
 const manifest = branch + "manifest.json"
 const ui = branch + "ui.json"
 const versionFile = branch + "VERSION";
@@ -73,7 +74,8 @@ const funcObj = {
     toggleLogo: toggleLogo,
     hideThumbs: hideThumbs,
     navbarIcons: navbarIcons,
-    hideSidebar: hideSidebar
+    hideSidebar: hideSidebar,
+    initGranularFilter: initGranularFilter,
 };
 
 function fetchManifest() {
